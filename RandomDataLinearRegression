@@ -1,0 +1,114 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMxZEaniZtNVdc2oIVH8J7k",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/DiptanshuSin/DataScience_Learning/blob/main/RandomDataLinearRegression\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FAtNIrOPc9qI",
+        "outputId": "ecc1e4e1-3333-4b3d-ff00-ec07e2b1ee86"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[160, 175, 156, 112, 111, 101, 159, 161, 171, 163, 119, 121, 127, 127, 116, 177, 168, 135, 103, 125, 165, 163, 121, 125, 150, 106, 129, 153, 145, 140, 109, 118, 178, 126, 152, 114, 140, 102, 163, 176, 110, 161, 172, 125, 139, 167, 159, 159, 106, 107, 111, 175, 119, 113, 149, 114, 173, 102, 109, 107, 129, 131, 165, 113, 159, 102, 136, 151, 121, 102, 114, 166, 180, 151, 146, 165, 118, 136, 168, 131, 118, 123, 151, 172, 116, 172, 178, 116, 118, 144, 172, 157, 123, 151, 144, 167, 117, 125, 120, 146]\n"
+          ]
+        }
+      ],
+      "source": [
+        "from sklearn import linear_model\n",
+        "from scipy import stats\n",
+        "import pandas as pd\n",
+        "import matplotlib.pyplot as plt\n",
+        "import random\n",
+        "\n",
+        "height = [random.randint(100, 180) for _ in range(100) ]\n",
+        "print(height)\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "weight = [random.randint(60,100)for _ in range(100)]\n",
+        "print(weight)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bU78n19PEN2M",
+        "outputId": "adb76f81-fec3-45fe-daca-9d0cbc66b3cd"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[90, 61, 85, 80, 71, 76, 96, 61, 85, 92, 63, 66, 69, 61, 83, 69, 87, 75, 92, 98, 81, 68, 96, 71, 99, 63, 64, 78, 82, 98, 77, 73, 60, 60, 94, 71, 74, 64, 68, 81, 63, 82, 69, 84, 64, 63, 84, 79, 75, 60, 76, 83, 98, 75, 81, 92, 95, 93, 71, 100, 94, 75, 70, 88, 86, 97, 98, 68, 98, 66, 67, 62, 87, 69, 100, 88, 65, 75, 82, 89, 68, 92, 97, 95, 71, 95, 77, 86, 88, 91, 95, 76, 95, 72, 89, 95, 72, 76, 80, 72]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Skewness of height: \",stats.skew(height))\n",
+        "print(\"Skewness of weight: \",stats.skew(weight))\n",
+        "print(\"Kurtosis of height: \",stats.kurtosis(height))\n",
+        "print(\"Kurtosis of weight: \",stats.kurtosis(weight))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CzNvnVhWEdeU",
+        "outputId": "c0629808-9a3d-4a50-af75-97eb949e0f6b"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Skewness of height:  0.1152940955897787\n",
+            "Skewness of weight:  0.05335394405168338\n",
+            "Kurtosis of height:  -1.3895221342706756\n",
+            "Kurtosis of weight:  -1.2619755298028148\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
